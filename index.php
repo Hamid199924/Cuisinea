@@ -1,20 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once('templates/header.php');
+//require_once('lib/recipe.php');
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//$recipes = getRecipes($pdo, _HOME_RECIPES_LIMIT_);
 
-    <title>Cuisinea</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/override-bootstrap.css" />
-    <link rel="stylesheet" href="/assets/css/style.css" />
+?>
 
-</head>
-<h1>Cuisinea</h1>
 
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
 
-</html>
+<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+        <img src="assets/images/logo-cuisinea.jpg" class="d-block mx-lg-auto img-fluid" alt="Logo Cuisinea" width="350" loading="lazy">
+    </div>
+    <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Cuisinea - Recettes de cuisine</h1>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, reprehenderit! Optio, nam? Maxime, molestiae velit. Quae, totam accusantium natus doloribus labore ratione. Molestiae ab dicta explicabo assumenda totam velit. Enim.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="recettes.php" class="btn btn-primary">Voir nos recettes</a>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+
+    <?php foreach ($recipes as $key => $recipe) {
+        include('templates/recipe_partial.php');
+    } ?>
+
+
+</div>
+
+<?php
+require_once('templates/footer.php');
+?>
